@@ -41,13 +41,13 @@ function App() {
   const loadDashboardData = async () => {
     try {
       const bookResponse = await fetch(
-        "http://localhost:5000/api/books"
+        "https://library-management-system-i41u.onrender.com/api/books"
       );
 
       const bookData = await bookResponse.json();
 
       const issueResponse = await fetch(
-        "http://localhost:5000/api/issues"
+        "https://library-management-system-i41u.onrender.com/api/issues"
       );
 
       const issueData = await issueResponse.json();
@@ -78,7 +78,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/books",
+        "https://library-management-system-i41u.onrender.com/api/books",
         {
           method: "POST",
           headers: {
@@ -122,7 +122,7 @@ function App() {
   const fetchBooks = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/books"
+        "https://library-management-system-i41u.onrender.com/api/books"
       );
 
       const data = await response.json();
@@ -145,7 +145,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/books/${id}`,
+        `https://library-management-system-i41u.onrender.com/api/books/${id}`,
         {
           method: "DELETE",
         }
@@ -186,7 +186,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/books/${editingBook._id}`,
+        `https://library-management-system-i41u.onrender.com/api/books/${editingBook._id}`,
         {
           method: "PUT",
           headers: {
@@ -274,7 +274,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/issues",
+        "https://library-management-system-i41u.onrender.com/api/issues",
         {
           method: "POST",
           headers: {
@@ -308,13 +308,13 @@ function App() {
   const fetchIssues = async () => {
     try {
       const issueResponse = await fetch(
-        "http://localhost:5000/api/issues"
+        "https://library-management-system-i41u.onrender.com/api/issues"
       );
 
       const issueData = await issueResponse.json();
 
       const bookResponse = await fetch(
-        "http://localhost:5000/api/books"
+        "https://library-management-system-i41u.onrender.com/api/books"
       );
 
       const bookData = await bookResponse.json();
@@ -338,7 +338,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/issues/return/${id}`,
+        `https://library-management-system-i41u.onrender.com/api/issues/return/${id}`,
         {
           method: "PUT",
         }
@@ -368,7 +368,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/issues/${id}`,
+        `https://library-management-system-i41u.onrender.com/api/issues/${id}`,
         {
           method: "DELETE",
         }
