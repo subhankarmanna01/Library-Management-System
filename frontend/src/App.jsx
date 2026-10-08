@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import Login from "./Login";
+import LandingPage from "./LandingPage";
+import Register from "./Register";
 import "./App.css";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(() => {
     return localStorage.getItem("libraryAdminLoggedIn") === "true";
   });
+
+  const [showLanding, setShowLanding] = useState(true);
+  const [showRegister, setShowRegister] = useState(false);
 
   const [activePage, setActivePage] = useState("dashboard");
 
