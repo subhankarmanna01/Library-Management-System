@@ -9,12 +9,12 @@ const createAdmin = async () => {
     await mongoose.connect(process.env.MONGO_URI);
 
     const existingUser = await User.findOne({
-      username: "admin",
+      username: "",
     });
 
     if (existingUser) {
       const hashedPassword = await bcrypt.hash(
-        "admin123",
+        "",
         10
       );
 
