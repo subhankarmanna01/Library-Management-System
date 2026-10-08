@@ -395,20 +395,49 @@ function App() {
   };
 
   // LOGIN PAGE
-  if (!loggedIn) {
-    return (
-      <Login
-        onLogin={() => {
-          localStorage.setItem(
-            "libraryAdminLoggedIn",
-            "true"
-          );
+ // LANDING / LOGIN / REGISTER PAGE
 
-          setLoggedIn(true);
+if (!loggedIn) {
+
+  if (showRegister) {
+    return (
+      <Register
+        onBackToLogin={() => {
+          setShowRegister(false);
+          setShowLanding(false);
         }}
       />
     );
   }
+
+  if (showLanding) {
+    return (
+      <LandingPage
+        onLogin={() => {
+          setShowLanding(false);
+          setShowRegister(false);
+        }}
+        onRegister={() => {
+          setShowLanding(false);
+          setShowRegister(true);
+        }}
+      />
+    );
+  }
+
+  return (
+    <Login
+      onLogin={() => {
+        localStorage.setItem(
+          "libraryAdminLoggedIn",
+          "true"
+        );
+
+        setLoggedIn(true);
+      }}
+    />
+  );
+}
 
   return (
     <div className="app-layout">
