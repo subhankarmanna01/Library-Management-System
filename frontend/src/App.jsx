@@ -390,9 +390,12 @@ function App() {
 
   // LOGOUT
   const handleLogout = () => {
-    localStorage.removeItem("libraryAdminLoggedIn");
-    setLoggedIn(false);
-  };
+  localStorage.removeItem("libraryAdminLoggedIn");
+
+  setLoggedIn(false);
+  setShowLanding(true);
+  setShowRegister(false);
+};
 
   // LOGIN PAGE
  // LANDING / LOGIN / REGISTER PAGE
